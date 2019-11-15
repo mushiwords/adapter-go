@@ -15,15 +15,17 @@ type Bank interface {
  **********************************/
 
 type CBCBank struct {
-	Money int
+	CBCMoney int
 }
 
 func (c CBCBank) CBCDeposit(m int) {
-	fmt.Println("CBCBank Deposit %v $", m)
+	c.CBCMoney += m
+	fmt.Printf("CBCBank Deposit %v $ Balance: %v\n", m, c.CBCMoney)
 }
 
 func (c CBCBank) CBCWithdraw(m int) {
-	fmt.Println("CBCBank Withdraw %v $", m)
+	c.CBCMoney -= m
+	fmt.Printf("CBCBank Withdraw %v $ Balance: %v\n", m, c.CBCMoney)
 }
 
 /***********************************
@@ -45,15 +47,17 @@ func (a CBCBankAdapter) Withdraw(m int) {
  **********************************/
 
 type ICBCBank struct {
-	Money int
+	ICBCMoney int
 }
 
 func (i ICBCBank) ICBCDeposit(m int) {
-	fmt.Println("ICBCBank Deposit %v $", m)
+	i.ICBCMoney += m
+	fmt.Printf("ICBCBank Deposit %v $ Balance: %v\n", m, i.ICBCMoney)
 }
 
 func (i ICBCBank) ICBCWithdraw(m int) {
-	fmt.Println("ICBCBank Withdraw %v $", m)
+	i.ICBCMoney -= m
+	fmt.Printf("ICBCBank Withdraw %v$ Balance: %v$\n", m, i.ICBCMoney)
 }
 
 /***********************************
