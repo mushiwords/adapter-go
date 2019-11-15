@@ -7,13 +7,13 @@ func main() {
 	cbcAdapter := bank.CBCBankAdapter{MyBank: cbc}
 
 	myDeposit(cbcAdapter, 10)
-	myDeposit(cbcAdapter, 20)
+	myWithdraw(cbcAdapter, 20)
 
 	icbc := bank.ICBCBank{Money: 200}
 	icbcAdapter := bank.ICBCBankAdapter{MyBank: icbc}
 
 	myDeposit(icbcAdapter, 20)
-	myDeposit(icbcAdapter, 50)
+	myWithdraw(icbcAdapter, 50)
 }
 
 func myDeposit(b bank.Bank, m int) {
